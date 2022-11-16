@@ -23,7 +23,7 @@ module.exports = {
     const lang1 = interaction.options.get('final_lang').value;
 
     
-    translate(input, { to: `${lang1}`}.then(res => {
+    translate(input, { to: `${lang1}`}).then(res => {
         const msgEmbed = new EmbedBuilder()
         .setColor("Random")
         .setTitle('**Translator Bot**')
@@ -36,7 +36,7 @@ module.exports = {
 
     interaction.reply({ embeds: [msgEmbed]});
     
-    })).catch(err => {
+    }).catch(err => {
         console.error(err);
     })
 	},
