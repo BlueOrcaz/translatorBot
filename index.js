@@ -29,6 +29,11 @@ for (const file of commandFiles) {
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
 client.once(Events.ClientReady, c => {
 	console.log(`Ready! Logged in as ${c.user.tag}`);
+	
+});
+
+client.on(Events.ClientReady, c => {
+	c.user.setActivity(`${client.guilds.cache.size} Server`, { type: 'WATCHING'});
 });
 
 client.on(Events.InteractionCreate, async interaction => {
@@ -49,7 +54,13 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 });
 
+	
+process.on('unhandledRejection', error => {
+	console.error('Unhandled promise rejection:', error);
+});
+
+
 // Log in to Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);
-keepAlive();
+//keepAlive();
 
