@@ -31,7 +31,7 @@ module.exports = {
 
     
     translate(input, { from: `${lang1}`, to: `${lang2}` }).then(res => {
-      const exampleEmbed = new EmbedBuilder()
+      const msgEmbed = new EmbedBuilder()
         .setColor("Random")
         .setTitle('**Translator Bot**')
         //.setURL('https://discord.js.org/')
@@ -49,7 +49,7 @@ module.exports = {
         .setTimestamp()
         //.setFooter({ text: 'Some footer text here', iconURL: 'https://i.imgur.com/AfFp7pu.png' });
 
-      interaction.reply({ embeds: [exampleEmbed] });
+      interaction.reply({ embeds: [msgEmbed] });
     }).catch(err => {
       console.error(err);
     });
