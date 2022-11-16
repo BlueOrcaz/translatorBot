@@ -1,0 +1,14 @@
+# Packages
+node_modules/
+
+# Log files
+logs/
+*.log
+npm-debug.log*
+
+# Env
+.env
+
+
+
+
