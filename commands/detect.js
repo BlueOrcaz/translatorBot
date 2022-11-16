@@ -4,8 +4,8 @@ const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('translate')
-		.setDescription('Translates your text!')
+		.setName('detects')
+		.setDescription('Automatically detects the language')
     .addStringOption(option =>
       option
         .setName('text')
