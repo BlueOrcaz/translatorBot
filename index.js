@@ -1,4 +1,5 @@
 // Require the necessary discord.js classes
+const keepAlive = require('./server');
 const { Client, Collection, GatewayIntentBits, Events } = require('discord.js');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -48,3 +49,4 @@ client.on(Events.InteractionCreate, async interaction => {
 
 // Log in to Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);
+keepAlive();
