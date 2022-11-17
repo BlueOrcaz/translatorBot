@@ -31,7 +31,7 @@ client.once(Events.ClientReady, c => {
 	
 });
 
-client.on("ready", () => {
+client.on(Events.ClientReady, () => {
 	console.log("Bot Online");
 
 	const activities = [
