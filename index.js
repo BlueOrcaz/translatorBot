@@ -5,7 +5,6 @@ const fs = require('node:fs');
 const path = require('node:path');
 require('dotenv').config();
 process.cwd();
-const mySecret = process.env['DISCORD_TOKEN'];
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -62,5 +61,5 @@ process.on('unhandledRejection', error => {
 
 // Log in to Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);
-//keepAlive();
+keepAlive();
 
