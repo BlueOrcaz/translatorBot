@@ -1,6 +1,6 @@
 // Require the necessary discord.js classes
 const keepAlive = require('./server');
-const { Client, Collection, GatewayIntentBits, Events } = require('discord.js');
+const { Client, Collection, GatewayIntentBits, Events, ActivityType } = require('discord.js');
 const fs = require('node:fs');
 const path = require('node:path');
 require('dotenv').config();
@@ -31,8 +31,20 @@ client.once(Events.ClientReady, c => {
 	
 });
 
-client.on(Events.ClientReady, c => {
-	c.user.setActivity(`${client.guilds.cache.size} Server`, { type: 'WATCHING'});
+client.on("ready", () => {
+	console.log("Bot Online");
+
+	const activities = [
+		`${client.guilds.cache.size} Servers!`,
+		'people translate stuff',
+		'people',
+		'hehe'
+	]
+
+	setInterval(() => {
+		const status = activities[Math.floor(Math.random() * activities.length)];
+		client.user.setPresence({ activities: [{ name: `${status}`, type: ActivityType.Watching	}], status: 'online', });
+	}, 3000);
 });
 
 client.on(Events.InteractionCreate, async interaction => {
