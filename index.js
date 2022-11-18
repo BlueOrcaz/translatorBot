@@ -1,10 +1,8 @@
 // Require the necessary discord.js classes
-const keepAlive = require('./server');
 const { Client, Collection, GatewayIntentBits, Events, ActivityType } = require('discord.js');
 const fs = require('node:fs');
 const path = require('node:path');
 require('dotenv').config();
-process.cwd();
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -73,5 +71,3 @@ process.on('unhandledRejection', error => {
 
 // Log in to Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);
-keepAlive();
-
